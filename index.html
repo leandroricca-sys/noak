@@ -3,19 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NOAK - Enlaces Oficiales</title>
+    <title>NOAK - Enlaces</title>
+    <!-- Incluimos Font Awesome para los íconos idénticos a la imagen -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        /* 1. RESET Y VARIABLES */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
         }
 
         body {
-            background-color: #f7f6f2; /* Fondo beige suave como el tuyo */
+            background-color: #fcf9f2; /* Fondo crema claro exterior */
             display: flex;
             justify-content: center;
             align-items: center;
@@ -23,172 +23,178 @@
             padding: 20px;
         }
 
-        /* 2. CONTENEDOR PRINCIPAL (TARJETA) */
-        .container {
-            background-color: #ffffff;
+        /* Contenedor principal estilo tarjeta móvil */
+        .card-container {
+            background-color: #fdfbf7; /* Color de fondo interno */
             width: 100%;
-            max-width: 430px; /* Tamaño ideal para simular un celular */
-            border-radius: 24px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            max-width: 430px;
+            border-radius: 30px;
+            border: 4px solid #ffffff;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
             overflow: hidden;
-            text-align: center;
-            padding-bottom: 30px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-bottom: 40px;
         }
 
-        /* Header con el fondo gris superior */
+        /* Encabezado bitono de la parte superior */
         .header-bg {
-            background-color: #ededed;
-            height: 100px;
+            background-color: #edebe6;
+            width: 100%;
+            height: 110px;
             position: relative;
             margin-bottom: 60px;
         }
 
+        /* Contenedor circular sin borde negro para evitar doble línea */
         .logo-container {
-            width: 100px;
-            height: 100px;
-            background-color: white;
+            width: 110px;
+            height: 110px;
+            background-color: #ffffff;
             border-radius: 50%;
-            border: 3px solid #000;
             display: flex;
             justify-content: center;
             align-items: center;
             position: absolute;
-            bottom: -50px;
+            bottom: -55px;
             left: 50%;
             transform: translateX(-50%);
-            font-weight: bold;
-            font-size: 20px;
-            letter-spacing: 1px;
+            overflow: hidden; /* Corta la imagen en forma circular perfecta */
         }
 
-        /* 3. TEXTOS */
-        .info-section {
+        .logo-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Hace que el logo ocupe todo el círculo sin deformarse */
+        }
+
+        /* Textos de la Bio */
+        .bio-container {
+            text-align: center;
             padding: 0 30px;
-            margin-bottom: 30px;
+            margin-bottom: 20px;
         }
 
-        .info-section h1 {
-            font-size: 1.1rem;
-            color: #1a1a1a;
-            margin-bottom: 6px;
-        }
-
-        .info-section p {
-            font-size: 0.9rem;
-            color: #666;
+        .bio-text {
+            font-size: 1rem;
+            font-weight: bold;
+            color: #123511; /* Verde oscuro sutil para el texto */
             line-height: 1.4;
         }
 
-        /* 4. BOTONES DE ENLACE */
-        .links-wrapper {
-            padding: 0 25px;
-            display: flex;
-            flex-direction: column;
-            gap: 14px;
+        /* Línea divisoria gris */
+        .divider {
+            width: 85%;
+            height: 1px;
+            background-color: #d1cfcb;
+            margin-bottom: 25px;
         }
 
-        .btn-link {
+        /* Contenedor de los botones */
+        .links-container {
+            width: 85%;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        /* Estilo base para todos los botones */
+        .btn {
             display: flex;
             align-items: center;
             justify-content: center;
             text-decoration: none;
-            font-weight: 700;
-            font-size: 0.95rem;
-            letter-spacing: 0.5px;
-            padding: 16px;
-            border-radius: 12px;
-            transition: all 0.3s ease;
-            position: relative;
-        }
-
-        /* Botón Destacado: Tienda Online */
-        .btn-shop {
-            background-color: #0d2b11; /* Verde oscuro elegante */
             color: #ffffff;
-            box-shadow: 0 4px 15px rgba(13, 43, 17, 0.2);
+            font-size: 0.95rem;
+            font-weight: bold;
+            letter-spacing: 0.5px;
+            padding: 18px 20px;
+            border-radius: 12px;
+            position: relative;
+            transition: transform 0.2s ease, opacity 0.2s ease;
+            text-transform: uppercase;
         }
 
-        /* Animación sutil de pulso para la tienda */
-        .btn-shop::after {
-            content: '¡VISITAR!';
+        .btn:hover {
+            transform: scale(1.02);
+            opacity: 0.95;
+        }
+
+        /* Posicionamiento estricto del ícono a la izquierda */
+        .btn i {
             position: absolute;
-            right: 15px;
-            font-size: 0.7rem;
-            background: #e67e22;
-            padding: 2px 6px;
-            border-radius: 4px;
-            color: white;
-            animation: pulse 2s infinite;
+            left: 20px;
+            font-size: 1.3rem;
         }
 
-        /* Botón Soporte WhatsApp */
+        /* Colores específicos de los botones */
+        .btn-tienda {
+            background-color: #123511;
+        }
+
+        .btn-instagram {
+            background-color: #e6007e;
+        }
+
+        .btn-tiktok {
+            background-color: #000000;
+        }
+
+        .btn-facebook {
+            background-color: #115cc1;
+        }
+
         .btn-whatsapp {
-            background-color: #25d366;
-            color: white;
-        }
-
-        /* Efectos Hover (cuando pasas el mouse) */
-        .btn-link:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(0,0,0,0.1);
-            filter: brightness(1.1);
-        }
-
-        /* 5. FOOTER CON REDES SOCIALES HORIZONTALES */
-        .social-footer {
-            margin-top: 35px;
-            display: flex;
-            justify-content: center;
-            gap: 25px;
-        }
-
-        .social-icon {
-            color: #333;
-            font-size: 1.4rem;
-            transition: color 0.3s ease, transform 0.3s ease;
-        }
-
-        /* Colores de marca en el hover de los iconos pequeños */
-        .social-icon.insta:hover { color: #e1306c; transform: scale(1.2); }
-        .social-icon.tiktok:hover { color: #000000; transform: scale(1.2); }
-        .social-icon.fb:hover { color: #1877f2; transform: scale(1.2); }
-
-        /* ANIMACIONES */
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-            100% { transform: scale(1); }
+            background-color: #79cb22;
         }
     </style>
 </head>
 <body>
 
-    <div class="container">
+    <div class="card-container">
+        <!-- Parte superior bitono y logo corregido -->
         <div class="header-bg">
             <div class="logo-container">
-                NOAK
+                <!-- Llama directamente a tu archivo logo.png.png recién subido -->
+                <img class="logo-img" src="logo.png.png" alt="Logo NOAK">
             </div>
         </div>
 
-        <div class="info-section">
-            <h1>Tecnología, hogar y lifestyle.</h1>
-            <p>Productos pensados para tu día a día</p>
+        <!-- Información de Bio -->
+        <div class="bio-container">
+            <p class="bio-text">Tecnología, hogar y lifestyle.<br>Productos pensados para tu día a día</p>
         </div>
 
-        <div class="links-wrapper">
-            <a href="TU_LINK_DE_TIENDA" class="btn-link btn-shop">
-                TIENDA ONLINE
+        <!-- Línea separadora -->
+        <div class="divider"></div>
+
+        <!-- Listado de Botones -->
+        <div class="links-container">
+            <!-- 1. Tienda Online -->
+            <a href="https://www.noak.com.ar" target="_blank" class="btn btn-tienda">
+                <i class="fa-solid fa-globe"></i> Tienda Online
             </a>
             
-            <a href="TU_LINK_DE_WHATSAPP" class="btn-link btn-whatsapp">
-                <i class="fab fa-whatsapp" style="margin-right: 8px;"></i> WHATSAPP SOPORTE
+            <!-- 2. Instagram (Con enlace profundo universal corregido) -->
+            <a href="https://www.instagram.com/_u/noak.arg/" target="_blank" class="btn btn-instagram">
+                <i class="fa-brands fa-instagram"></i> Instagram
             </a>
-        </div>
-
-        <div class="social-footer">
-            <a href="TU_LINK_INSTAGRAM" class="social-icon insta" target="_blank"><i class="fab fa-instagram"></i></a>
-            <a href="TU_LINK_TIKTOK" class="social-icon tiktok" target="_blank"><i class="fab fa-tiktok"></i></a>
-            <a href="TU_LINK_FACEBOOK" class="social-icon fb" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            
+            <!-- 3. Tiktok -->
+            <a href="#" target="_blank" class="btn btn-tiktok">
+                <i class="fa-brands fa-tiktok"></i> Tiktok
+            </a>
+            
+            <!-- 4. Facebook -->
+            <a href="#" target="_blank" class="btn btn-facebook">
+                <i class="fa-brands fa-facebook-f"></i> Facebook
+            </a>
+            
+            <!-- 5. Whatsapp Soporte -->
+            <a href="#" target="_blank" class="btn btn-whatsapp">
+                <i class="fa-brands fa-whatsapp"></i> Whatsapp Soporte
+            </a>
         </div>
     </div>
 
